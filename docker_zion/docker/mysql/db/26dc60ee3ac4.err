@@ -1,0 +1,13 @@
+2022-12-26T03:15:53.880758Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2022-12-26T03:15:53.926391Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2022-12-26T03:15:53.926452Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.31) starting as process 132
+2022-12-26T03:15:53.993355Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2022-12-26T03:15:54.323102Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2022-12-26T03:15:59.944600Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2022-12-26T03:16:00.778236Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2022-12-26T03:16:00.778747Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2022-12-26T03:16:00.868715Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2022-12-26T03:16:01.095608Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2022-12-26T03:16:01.095737Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2022-12-26T03:16:06.009161Z 11 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.31).
+2022-12-26T03:16:07.112590Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.31)  MySQL Community Server - GPL.
