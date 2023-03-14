@@ -1,4 +1,8 @@
 version: '3.3'
+networks:
+  network_render:
+  app-shared:
+    driver: bridge
 services:
   php:
     container_name: php
@@ -8,6 +12,9 @@ services:
     volumes:
       - "../../zion:/var/www/html/zion"
     tty: true
+    networks:
+      - network_render
+      - app-shared
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -17,6 +24,9 @@ services:
     volumes:
     - "./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
     - "../../zion:/var/www/html/zion"
+    networks:
+      - network_render
+      - app-shared
   mysql:
     image: mysql:8.0
     container_name: mysql
@@ -35,7 +45,10 @@ services:
       - "./docker/mysql/custom.cnf:/etc/mysql/conf.d/mysql.cnf"
       - "./docker/mysql/query.log:/var/log/query.log"
     ports:
-    - "3306:3306"
+      - "3306:3306"
+    networks:
+      - network_render
+      - app-shared
 #  mongodb:
 #    image: mongo:latest
 #    container_name: mongodb

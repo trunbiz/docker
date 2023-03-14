@@ -1,4 +1,6 @@
 version: '3.3'
+networks:
+  network_render:
 services:
   php:
     container_name: php_render
@@ -8,6 +10,8 @@ services:
     volumes:
       - "../../render:/var/www/html/render"
     tty: true
+    networks:
+      - network_render
   nginx:
     image: nginx:latest
     container_name: nginx_render
@@ -17,6 +21,8 @@ services:
     volumes:
     - "./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
     - "../../render:/var/www/html/render"
+    networks:
+      - network_render
   mysql:
     image: mysql:8.0
     container_name: mysql_render
@@ -35,6 +41,8 @@ services:
       - "./docker/mysql/query.log:/var/log/query.log"
     ports:
     - "3307:3306"
+    networks:
+      - network_render
 #  mongodb:
 #    image: mongo:latest
 #    container_name: mongodb
