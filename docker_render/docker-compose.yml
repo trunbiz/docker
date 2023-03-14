@@ -1,6 +1,8 @@
 version: '3.3'
 networks:
   network_render:
+  apptwo-shared:
+    driver: bridge
 services:
   php:
     container_name: php_render
@@ -12,6 +14,7 @@ services:
     tty: true
     networks:
       - network_render
+      - apptwo-shared
   nginx:
     image: nginx:latest
     container_name: nginx_render
@@ -23,6 +26,7 @@ services:
     - "../../render:/var/www/html/render"
     networks:
       - network_render
+      - apptwo-shared
   mysql:
     image: mysql:8.0
     container_name: mysql_render
@@ -43,6 +47,7 @@ services:
     - "3307:3306"
     networks:
       - network_render
+      - apptwo-shared
 #  mongodb:
 #    image: mongo:latest
 #    container_name: mongodb
