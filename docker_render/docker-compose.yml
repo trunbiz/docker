@@ -16,6 +16,7 @@ services:
     - "4431:443"
     volumes:
     - "./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    - "../../render:/var/www/html/render"
   mysql:
     image: mysql:8.0
     container_name: mysql_render

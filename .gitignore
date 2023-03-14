@@ -1,0 +1,3 @@
+/node_modules
+/docker_render/docker/mysql
+/docker_zion/docker/mysql

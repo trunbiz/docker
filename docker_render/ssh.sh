@@ -1,1 +1,1 @@
-winpty docker exec -it php zsh
+winpty docker exec -it php_render zsh
